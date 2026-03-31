@@ -68,23 +68,22 @@ Section 8  — Error Analysis
   ├── 8.2  Display All 25 Error Samples
   ├── 8.3  Inspect Available Drive Files
   └── 8.4  Hallucination Fix Demo (no_repeat_ngram_size + repetition_penalty)
-Section 9  — Q2: ASR Output Cleanup Pipeline
+Section 9  ASR Output Cleanup Pipeline
   ├── 9.1  Generate Raw ASR Outputs (50-sample subset)
   ├── 9.2  Explore Number Words & English Words in References
   ├── 9.3  Number Normalisation
   ├── 9.4  English Word Detection & Full Pipeline Output
   ├── 9.5  Analyse Pipeline Results
   └── 9.6  Manual Annotation of Missed English Words
-Section 10 — Q3: Hindi Spelling Classification
+Section 10 — Hindi Spelling Classification
   ├── 10.1 Load Word List (177K words from Google Sheets)
   ├── 10.2 Spelling Classifier
   ├── 10.3 Review Low-Confidence Words
   ├── 10.4 Manual Assessment of Low-Confidence Labels
   └── 10.5 High & Medium Confidence Incorrect Words Breakdown
 Section 11 — Submission
-  ├── 11.1 Export Q3 Submission CSV
-  ├── 11.2 Download Submission File
-  └── 11.3 HuggingFace Login (optional Hub push)
+  ├── 11.1 Export CSV
+  ├── 11.2 Download File
 ```
 
 ---
@@ -143,7 +142,7 @@ Fine-tune Whisper-small
 Evaluate on FLEURS Hindi test set  →  report WER
 ```
 
-### Q2 — ASR Cleanup Pipeline
+### ASR Cleanup Pipeline
 
 ```
 Raw Whisper ASR Output
@@ -157,7 +156,7 @@ Stage 2: English Loanword Detection
 Cleaned & Tagged Output
 ```
 
-### Q3 — Spelling Classifier Rules (applied in order)
+### Spelling Classifier Rules (applied in order)
 
 | Priority | Rule | Label |
 |----------|------|-------|
@@ -207,12 +206,10 @@ All outputs are saved to `/content/drive/MyDrive/whisper_hindi/` on Google Drive
 - **Task**: `transcribe`
 - **Training config**: batch size 4, gradient checkpointing enabled, saved to Google Drive
 
-> Optionally push fine-tuned checkpoints to the HuggingFace Hub using Section 11.3.
-
 ---
 
 ## 📁 Project
 
 **Notebook**: `Hindi ASR System — Fine-Tuning, Cleanup & Lattice Evaluation.ipynb`  
-**Assignment**: Josh Talks Task Assignment — Hindi ASR Fine-tuning  
+**Dataset**: Josh Talks — Hindi ASR Fine-tuning  
 **Runtime**: Python 3 · Google Colab · GPU recommended
